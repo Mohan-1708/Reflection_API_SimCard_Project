@@ -1,44 +1,76 @@
-Here's a project description based on your uploaded files:  
+
+
+# 📱 Mobile SIM Management Using Reflection API
+
+## 📌 Project Overview
+
+This Java-based project simulates a **mobile device** that can dynamically switch between different **SIM cards** (Airtel, Jio, VI) using **Reflection API**. It provides functionalities such as **recharge, checking balance, making calls, and sending SMS**, all handled dynamically at runtime.
+
+## 🛠️ Features
+
+- **Dynamically Load SIM Classes**: Uses **Reflection API** to instantiate SIM objects based on user input.
+- **Multiple SIM Support**: Works with **Airtel, Jio, and VI**.
+- **Essential Mobile Features**:
+  - Recharge balance
+  - Check current balance
+  - Make calls
+  - Send SMS
+- **Loose Coupling**: `Mobile` class does not directly depend on specific SIM implementations, improving flexibility.
+
+## 📂 Project Structure
+
+| File Name              | Description |
+|------------------------|-------------|
+| **Sim.java**           | Interface defining methods for SIM operations. |
+| **Airtel.java**        | Implementation of `Sim` interface for Airtel. |
+| **Jio.java**           | Implementation of `Sim` interface for Jio. |
+| **VI.java**            | Implementation of `Sim` interface for VI. |
+| **Mobile.java**        | Handles SIM insertion, recharges, calls, and SMS. |
+| **Mobile_Screen.java** | Main program that takes user input and manages SIM operations. |
+
+## 🚀 How to Run
+
+1. **Compile all Java files**:
+   ```sh
+   javac *.java
+   ```
+2. **Run the main class**:
+   ```sh
+   java Mobile_Screen
+   ```
+3. **Follow the on-screen instructions** to insert a SIM and perform actions like recharge, call, or SMS.
+
+## 🎯 Example Interaction
+
+```
+Insert Sim: Jio
+Sim activated
+
+Choose your Option
+1. Recharge
+2. Current Balance
+3. Call
+4. SMS
+5. Close
+
+Enter amount to Recharge: 100
+Jio recharge successful
+
+Your balance is: 100.0
+
+Enter number to call: 9876543210
+Your call is busy.
+
+Enter number and message: 9876543210 "Hello!"
+Jio: SMS sent.
+```
+
+## 🏗️ Technologies Used
+
+- **Java**
+- **Reflection API**
+- **Object-Oriented Programming (OOP)**
 
 ---
 
-# **Project: SIM Management using Reflection API and OOP Concepts**  
-
-## **Project Overview**  
-This project is a **SIM management system** that utilizes **Object-Oriented Programming (OOP) principles** and the **Reflection API** in Java to dynamically load and interact with different SIM card providers (Airtel, Jio, etc.). The system simulates real-world mobile operations such as **recharging, checking balance, making calls, and sending SMS**.  
-
-## **Key Features**  
-- **Interface-Based Design**: The `Sim` interface defines common functionalities (recharge, balance check, call, SMS) that different SIM providers implement.  
-- **Dynamic SIM Loading (Reflection API)**: The `Mobile` class dynamically loads SIM implementations at runtime based on user input using `Class.forName()` and `newInstance()`.  
-- **Encapsulation and Abstraction**: The `Mobile` class acts as an abstraction, interacting with different SIM providers without knowing their internal details.  
-- **Interactive User Interface**: `Mobile_Screen.java` provides a console-based menu system for user interaction.  
-
-## **Class Descriptions**  
-### **1. Sim.java (Interface)**  
-Defines methods that all SIM providers must implement:  
-- `recharge(double amt)`: Adds balance to the SIM.  
-- `currentBaal()`: Displays current balance.  
-- `call(long num)`: Simulates making a call.  
-- `sms(long num, String msg)`: Sends an SMS.  
-
-### **2. Airtel.java & Jio.java (SIM Implementations)**  
-- Implement `Sim` interface.  
-- Define provider-specific behaviors for recharge, balance inquiry, calls, and SMS.  
-
-### **3. Mobile.java (Core Mobile Class)**  
-- Uses **Reflection API** to dynamically load a SIM class based on user input.  
-- Calls appropriate methods on the inserted SIM.  
-
-### **4. Mobile_Screen.java (User Interaction)**  
-- Provides a **menu-driven interface** for users to interact with the mobile system.  
-- Allows users to **insert a SIM**, **recharge**, **check balance**, **make calls**, and **send SMS**.  
-
-## **Technologies Used**  
-- **Java** (OOP principles: Abstraction, Encapsulation, Polymorphism, Interface Implementation)  
-- **Reflection API** (`Class.forName()`, `newInstance()`)  
-- **Exception Handling**  
-
-## **Conclusion**  
-This project demonstrates **real-world OOP design patterns** and the power of the **Reflection API** in Java by dynamically loading and managing different SIM providers at runtime. 🚀  
-
-Would you like any modifications or enhancements to the description? 😊
+Would you like any modifications or enhancements to this? 🚀
